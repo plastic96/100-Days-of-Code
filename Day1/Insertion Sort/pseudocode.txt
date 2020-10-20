@@ -1,0 +1,24 @@
+- Similar to card solving technique, usefule for a small arrays basically under the threshold 10.
+- Worst case: elements sorted in reverse order ( time complexity: O(n^2))
+- Average case: almost all elements are not more than k elements away from their sorted position (time complexity: O(kn))
+- Best case: already sorted array (time complexity: O(n))
+- Most efficient quadratic algorithm
+- Stable: does not change the relative order of elements with same values
+- Adaptive: efficient for data sets that are already substatially sorted
+- Online: can sort a list as and when it receives it
+- In-place: Uses only constant extra memory O(1)
+- Not efficient where writing to the memory is costlier than reading from it
+
+Pseudocode:
+
+i = 1 to arr.len -1
+    key = arr[i]
+    j = i-1
+    while j>0 and arr[j]<key
+        arr[j+1] = arr[j]
+        j--
+    arr[j+1] = key
+    i--
+
+*check Jon Bentley's 3 line C version and 5 line optimised version
+*check skip list for insertion sort, shell sort and list insertion sort
